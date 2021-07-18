@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nehir index{% endblock %}
+
+{% block body %}
+    <h1>Nehir index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for nehir in nehirs %}
+            <tr>
+                <td>{{ nehir.id }}</td>
+                <td>{{ nehir.name }}</td>
+                <td>
+                    <a href="{{ path('nehir_show', {'id': nehir.id}) }}">show</a>
+                    <a href="{{ path('nehir_edit', {'id': nehir.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('nehir_new') }}">Create new</a>
+{% endblock %}

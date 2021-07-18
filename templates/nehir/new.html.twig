@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Nehir{% endblock %}
+
+{% block body %}
+    <h1>Create new Nehir</h1>
+
+    {{ include('nehir/_form.html.twig') }}
+
+    <a href="{{ path('nehir_index') }}">back to list</a>
+{% endblock %}
